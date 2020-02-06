@@ -3,19 +3,18 @@
 #include <SFML/Graphics.hpp>
 #include "Framework/Input.h"
 #include "Framework/GameObject.h"
+#include "Player.h"
 #include <string.h>
 #include <iostream>
 
 
-class Level{
+class Level: public Player{
 public:
 	Level(sf::RenderWindow* hwnd, Input* in);
 	~Level();
-
 	void handleInput(float dt);
 	void update(float dt);
 	void render();
-
 private:
 	// Default functions for rendering to the screen.
 	void beginDraw();
@@ -28,5 +27,6 @@ private:
 	// Level objects
 	GameObject testSprite;
 	sf::Texture texture;
+	Player Sprite;
 
 };
